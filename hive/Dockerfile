@@ -1,7 +1,5 @@
 FROM sciencepal/hadoop_cluster:spark
 
-MAINTAINER Aditya Pal <aditya.pal.science@gmail.com>
-
 USER root
 
 ENV HIVE_VERSION 2.3.9

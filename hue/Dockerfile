@@ -1,7 +1,5 @@
 FROM gethue/hue:latest
 
-MAINTAINER Aditya Pal <aditya.pal.science@gmail.com>
-
 USER root
 
 ADD configs/hue.ini /usr/share/hue/desktop/conf/hue.ini

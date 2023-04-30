@@ -1,7 +1,5 @@
 FROM ubuntu
 
-MAINTAINER Aditya Pal <aditya.pal.science@gmail.com>
-
 USER root
 
 # open port 22

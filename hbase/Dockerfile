@@ -1,7 +1,5 @@
 FROM sciencepal/hadoop_cluster:hive
 
-MAINTAINER Aditya Pal <aditya.pal.science@gmail.com>
-
 USER root
 
 ENV HBASE_VERSION 2.4.15

@@ -40,3 +40,6 @@ OK
 1	588	5.000	838983339
 Time taken: 0.175 seconds, Fetched: 14 row(s)
 ```
+**Testing PySPARK on EDGE Node**
+
+You can run a test with this python code -> configs/py-base-test-2.py. Just copy it in the edge node and run with Python 3.
