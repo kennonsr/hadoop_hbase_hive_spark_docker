@@ -1,0 +1,6 @@
+*.gz
+*.tgz
+configs/id_rsa*
+commands-test.sh
+Dockerfile.bkp
+*.bkp
