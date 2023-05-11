@@ -45,8 +45,9 @@ Time taken: 0.175 seconds, Fetched: 14 row(s)
 **Testing Spark Hive Integration - spark-shell on EDGE or Nodemaster Spark > 2.4.x with table created above**
 
 hadoop@nodemaster:/$ **spark-shell --driver-java-options "-Dhive.metastore.uris=thrift://nodemaster:9083"**
-
+```scala
 import org.apache.spark.sql.SparkSession
+
 val spark = SparkSession.builder().master("spark://nodemaster:7077")
     .appName("kennon.test.nl")
     .config("spark.sql.warehouse.dir","/users/hive/warehouse")
@@ -55,7 +56,7 @@ val spark = SparkSession.builder().master("spark://nodemaster:7077")
 
 val df = sql("select * from test.test_data limit 10")
 df.show()
-
+```
 **Testing HBASE with PyBase on EDGE Node**
 
 You can run a test with this python code -> configs/py-base-test-2.py. Just copy it in the edge node and run with Python 3.
