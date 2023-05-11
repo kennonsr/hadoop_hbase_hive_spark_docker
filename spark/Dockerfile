@@ -41,7 +41,7 @@ RUN wget https://archive.apache.org/dist/spark/spark-$SPARK_VERSION/spark-$SPARK
 RUN tar -xzf /home/hadoop/spark-$SPARK_VERSION-bin-hadoop3.2.tgz -C /home/hadoop/
 RUN mv /home/hadoop/spark-$SPARK_VERSION-bin-hadoop3.2 /home/hadoop/spark
 RUN rm /home/hadoop/spark-$SPARK_VERSION-bin-hadoop3.2.tgz
-RUN wget https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.19/postgresql-42.2.19.jar -p /home/hadoop/spark/jars/
+#RUN wget https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.19/postgresql-42.2.19.jar -p /home/hadoop/spark/jars/
 
 
 RUN mkdir -p /home/hadoop/spark/logs

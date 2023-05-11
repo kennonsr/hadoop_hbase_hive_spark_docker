@@ -10,6 +10,7 @@ RUN rm -rf /home/hadoop/kafka_2.12-2.4.0*
 RUN chown hadoop -R /home/hadoop/kafka
 ENV KAFKA_HOME=/home/hadoop/kafka
 ENV PATH $KAFKA_HOME/bin:$PATH
+ADD configs/py-base-test-2.py $HADOOP_HOME/
 
 CMD service ssh start && bash
 

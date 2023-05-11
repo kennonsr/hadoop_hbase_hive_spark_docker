@@ -10,7 +10,8 @@
 
 4. Get file from container local to HDFS : hadoop@nodemaster:/$ **hdfs dfs -put /tmp/test_data.csv /user/hadoop/test/**
 
-5. execute Hive by : hadoop@nodemaster:/$ **hive**
+5. execute Hive by : hadoop@nodemaster:/$ **beeline -u "jdbc:hive2://nodemaster:10000/"** 
+or hadoop@nodemaster:/$ **hive**
 
 6. In hive terminal : hive>**create schema if not exists test;**
 
@@ -40,6 +41,22 @@ OK
 1	588	5.000	838983339
 Time taken: 0.175 seconds, Fetched: 14 row(s)
 ```
-**Testing PySPARK on EDGE Node**
+
+**Testing Spark Hive Integration - spark-shell on EDGE or Nodemaster Spark > 2.4.x with table created above**
+
+hadoop@nodemaster:/$ **spark-shell --driver-java-options "-Dhive.metastore.uris=thrift://nodemaster:9083"**
+
+import org.apache.spark.sql.SparkSession
+val spark = SparkSession.builder().master("spark://nodemaster:7077")
+    .appName("kennon.test.nl")
+    .config("spark.sql.warehouse.dir","/users/hive/warehouse")
+    .enableHiveSupport()
+    .getOrCreate()
+
+val df = sql("select * from test.test_data limit 10")
+df.show()
+
+**Testing HBASE with PyBase on EDGE Node**
 
 You can run a test with this python code -> configs/py-base-test-2.py. Just copy it in the edge node and run with Python 3.
+
