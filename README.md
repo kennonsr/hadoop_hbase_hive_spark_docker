@@ -1,4 +1,5 @@
-# HADOOP HBASE HIVE SPARK DOCKER CONTAINERS (MacOS and Linux tested)
+# HADOOP HBASE HIVE SPARK DOCKER CONTAINERS 
+## MacOS and Linux tested and it is recommended, also you can deploy via WSL on Windows. 
 
 Thanks to **Aditya Pal** - I forked his original project/repo (https://github.com/sciencepal/dockers). For this setup, considerable changes were done to make it work/integrate, having a development/lab Hadoop platform for testing purposes with udpdated compnents.
 
