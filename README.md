@@ -58,4 +58,4 @@ For Spark: Choose Spark version > 2.0 from here https://archive.apache.org/dist/
 
 6. Once all containers are created/deployed via install and stopped with the previous command, you can restart cluster keeping the state by **./cluster.sh start**
 
-7. Simple instructions to test the cluster after the deployment in the **cluster_simple_test.md** file are available.
+7. Simple instructions to test the cluster after the deployment in the **cluster_simple_test.md**(https://github.com/kennonsr/hadoop_hbase_hive_spark_docker/blob/main/cluster_simple_test.md) file are available.
