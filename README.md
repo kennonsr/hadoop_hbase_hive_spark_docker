@@ -1,7 +1,7 @@
 # HADOOP HBASE HIVE SPARK DOCKER CONTAINERS 
-## MacOS(Intel) and Linux tested and it is recommended, also you can deploy via WSL on Windows. 
+## it is recommended running on MacOS and Linux using Intel Processor, for both OS were tested, also you can deploy only via WSL on Windows. 
 
-Thanks to **Aditya Pal** - I forked his original project/repo (https://github.com/sciencepal/dockers). For this setup, considerable changes were done to make it work/integrate, having a development/lab Hadoop platform for testing purposes with udpdated compnents.
+Thanks to **Aditya Pal** - I forked his original project/repo (https://github.com/sciencepal/dockers). For this setup, considerable changes were done to make it work/integrate, having a development/lab Hadoop platform for testing purposes with udpdated components.
 
 This project in the original repo has 1 master, 2 workers, 1 edge node (with Flume, Sqoop and Kafka !!) , 1 Hue service node, 1 Zeppelin service node and 1 Nifi node.
 
@@ -11,7 +11,7 @@ This project in the original repo has 1 master, 2 workers, 1 edge node (with Flu
 
 **UPDATE** : To have a lighter platform including HBASE service this repo will deploy only Hadoop, Hbase, Zookeeper, Hive, Hive Metastore (PostGresSQL) and Spark only. It is possible to add the other services back, together with Hbase, modifying the script files for build and cluster.
 
-### This platform was validate with MacOs running on Intel Processor and Linux, running all the shell scripts. For Windows, using Docker Desktop, it was not totally tested. But the Batch files are present. Also for Windows you can deploy via WSL, but again, you can encounter some issues. Also for windows, before run the build.bat file you must create or add in configs ssh keys id_rsa and id_rsa.pub. You can run via Windows Subsystem for Linux (WSL) ssh-keygen available in the build.sh (bash script). If you run the on MacOS with M1/M2 - ARM architecture, please change in the Hadoop Dockerfile the java path to arm64.
+### This platform was validate with MacOs and Linux running on Intel Processor. Deployment via shell scripts. For Windows, you can deploy via WSL, but again, you can encounter some issues. You can run via Windows Subsystem for Linux (WSL) ssh-keygen available in the build.sh (bash script). If you run on MacOS with M1/M2 - ARM architecture, please change in the Hadoop Dockerfile the java path to use ARM architecture (arm64).
 
 ### Make sure that you build the Dockerfiles for each components in your local environment. Otherwise you will get an older and not tested version from docker hub repo.
 
