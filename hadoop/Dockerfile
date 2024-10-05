@@ -45,6 +45,7 @@ RUN rm -rf /home/hadoop/hadoop-$HADOOP_VERSION*
 
 # set environment variables
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+# ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-arm64
 ENV HADOOP_HOME /home/hadoop/hadoop
 ENV HADOOP_CONF_DIR $HADOOP_HOME/etc/hadoop
 ENV HADOOP_MAPRED_HOME $HADOOP_HOME 
@@ -57,6 +58,7 @@ ENV PATH $HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH
 
 # set hadoop-env.sh
 RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /home/hadoop/hadoop/etc/hadoop/hadoop-env.sh
+# RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64" >> /home/hadoop/hadoop/etc/hadoop/hadoop-env.sh
 RUN echo "export HADOOP_HOME=/home/hadoop/hadoop" >> /home/hadoop/hadoop/etc/hadoop/hadoop-env.sh
 RUN echo "export HADOOP_CONF_DIR=/home/hadoop/hadoop/etc/hadoop" >> /home/hadoop/hadoop/etc/hadoop/hadoop-env.sh
 RUN echo "export HDFS_NAMENODE_USER=hadoop" >> /home/hadoop/hadoop/etc/hadoop/hadoop-env.sh

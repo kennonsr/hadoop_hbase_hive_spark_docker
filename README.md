@@ -1,7 +1,5 @@
 # HADOOP HBASE HIVE SPARK DOCKER CONTAINERS 
-## it is recommended running on MacOS and Linux using Intel Processor, for both OS were tested, also you can deploy only via WSL on Windows. 
-
-Thanks to **Aditya Pal** - I forked his original project/repo (https://github.com/sciencepal/dockers). For this setup, considerable changes were done to make it work/integrate, having a development/lab Hadoop platform for testing purposes with udpdated components.
+## it is recommended running on MacOS and Linux using Intel Processor, for both OS were tested, also you can deploy only via WSL on Windows (extra effort). 
 
 This project in the original repo has 1 master, 2 workers, 1 edge node (with Flume, Sqoop and Kafka !!) , 1 Hue service node, 1 Zeppelin service node and 1 Nifi node.
 
@@ -11,7 +9,13 @@ This project in the original repo has 1 master, 2 workers, 1 edge node (with Flu
 
 **UPDATE** : To have a lighter platform including HBASE service this repo will deploy only Hadoop, Hbase, Zookeeper, Hive, Hive Metastore (PostGresSQL) and Spark only. It is possible to add the other services back, together with Hbase, modifying the script files for build and cluster.
 
-### This platform was validate with MacOs and Linux running on Intel Processor. Deployment via shell scripts. For Windows, you can deploy via WSL, but again, you can encounter some issues. You can run via Windows Subsystem for Linux (WSL) ssh-keygen available in the build.sh (bash script). If you run on MacOS with M1/M2 - ARM architecture, please change in the Hadoop Dockerfile the java path to use ARM architecture (arm64).
+### This platform was validate with MacOs and Linux running on Intel Processor. Deployment via shell scripts. For Windows 10 or 11, you can deploy via WSL, but you need to follow the instructions bellow. You can run via Windows Subsystem for Linux (WSL) ssh-keygen available in the build.sh (bash script). If you run on MacOS with M1/M2 - ARM architecture, please change in the Hadoop Dockerfile the java path to use ARM architecture (arm64).
+## Windows Docker via WSL 2
+* I do recommend using Ubuntu 20.04 or 22.04 distro for wsl, that I validated.
+* Before you install docker desktop, install wsl and Ubuntu via powershell 'wsl.exe --install -d Ubuntu 22.04' for example
+* [Docker install doc for WSL](https://docs.docker.com/desktop/wsl/) Docker Desktop WSL 2 backend on Windows
+* In this link from Microsoft has instructions how to Install docker having WSL as backend https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers
+
 
 ### Make sure that you build the Dockerfiles for each components in your local environment. Otherwise you will get an older and not tested version from docker hub repo.
 
@@ -59,3 +63,7 @@ For Spark: Choose Spark version > 2.0 from here https://archive.apache.org/dist/
 6. Once all containers are created/deployed via install and stopped with the previous command, you can restart cluster keeping the state by **./cluster.sh start**
 
 7. Simple instructions to test the cluster after the deployment in the **cluster_simple_test.md**(https://github.com/kennonsr/hadoop_hbase_hive_spark_docker/blob/main/cluster_simple_test.md) file are available.
+
+
+
+Thanks to **Aditya Pal** - I forked his original project/repo (https://github.com/sciencepal/dockers). For this setup, considerable changes were done to make it work/integrate, having a development/lab Hadoop platform for testing purposes with udpdated components.

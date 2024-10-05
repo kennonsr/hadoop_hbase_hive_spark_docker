@@ -10,7 +10,9 @@
 
 4. Get file from container local to HDFS : hadoop@nodemaster:/$ **hdfs dfs -put /tmp/test_data.csv /user/hadoop/test/**
 
-5. execute Hive by : hadoop@nodemaster:/$ **beeline -u "jdbc:hive2://nodemaster:10000/"** 
+5. execute Hive by : hadoop@nodemaster:/$ 
+
+**beeline -u "jdbc:hive2://nodemaster:10000/"** 
 or hadoop@nodemaster:/$ **hive**
 
 6. In hive terminal : hive>**create schema if not exists test;**
